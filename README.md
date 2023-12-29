@@ -10,8 +10,8 @@ Adote um Pet é uma aplicação desenvolvida para fins de estudo e foi elaborada
 O projeto mostra o cadastro, login e navegação entre as páginas após o login(Sessions), onde é possível cadastrar um pet com envio de foto, busca de cep de forma automática e envio de e-mail para
 aprovação de adoções.
 
-## Layout mobile
-![Mobile 1](https://github.com/acenelio/assets/raw/main/sds1/mobile1.png) ![Mobile 2](https://github.com/acenelio/assets/raw/main/sds1/mobile2.png)
+## Página de Cadastro
+![cad](https://github.com/Jullianag/adotepet/blob/main/assets/cadastro.pngg) ![log](https://github.com/acenelio/assets/raw/main/sds1/mobile2.png)
 
 ## Layout web
 ![Web 1](https://github.com/acenelio/assets/raw/main/sds1/web1.png)
