@@ -1,0 +1,49 @@
+{% load static %}
+
+                <form action="{% url 'cadastro' %}" method="POST">
+                    {% csrf_token %}
+                            <span>Usuário:</span>
+                            <input type="text" class="form-control" placeholder="Digite um nome de usuário..." name="nome">
+                            <br>
+                            <span>E-mail:</span>
+                            <input type="email" class="form-control" placeholder="Digite seu email..." name="email">
+                            <br>
+                            <div class="row">
+
+                                <div class="col-md">
+                                    <span>Senha:</span>
+                                    <input type="password" class="form-control" placeholder="Digite sua senha..." name="senha">
+                                </div>
+
+                                <div class="col-md">
+                                    <span>Confirmar senha:</span>
+                                    <input type="password" class="form-control" placeholder="Digite sua senha..." name="confirmar_senha">
+                                </div>
+                            </div>
+                    <hr>
+                    <a href="{% url 'login' %}" class="link-float">Já tenho uma conta</a>
+
+                    <div style="font-size: 12px">
+                            Requisitos para a senha:
+                            <br>
+                            <li> Mais de 5 caracteres
+                            <br>
+                            <li>Ao menos 1 letra maiúscula
+                            <br>
+                            <li>Ao menos 1 número
+                            </li>
+                    </div>
+
+                            <input type="submit" value="SALVAR" class="btn-custom-primary">
+
+
+
+                </form>
+                        </div>
+                    </div>
+
+
+                <div class="col-md bg-img">
+                    {% include 'partials/usuarios/partial_logo.html' %}
+                </div>
+

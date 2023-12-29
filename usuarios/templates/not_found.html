@@ -1,0 +1,17 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Página não existe</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'geral/img/favicon.png' %}" >
+    <link href="{% static 'usuarios/css/not_found.css' %}" rel="stylesheet">
+
+    <h1>Você está perdido?</h1>
+    <a href="{% url 'login' %}">Clique aqui para voltar</a>
+</head>
+<body>
+
+</body>
+</html>

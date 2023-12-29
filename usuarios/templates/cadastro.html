@@ -1,0 +1,49 @@
+{% extends 'bases/base.html' %}
+
+{% load static %}
+
+{% block title %}Cadastro{% endblock %}
+
+{% block head %}
+
+
+
+{% endblock %}
+
+{% block body %}
+
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 bg-side">
+                    <div class='header'>
+                        <span style="font-size: 20px">Bem-vindo ao</span>
+                        {% include 'partials/usuarios/partial_nome.html' %}
+                    </div>
+                <br>
+                    {% include 'partials/messages/messages.html' %}
+
+                    <div class="body-form">
+                        <h2>Crie sua conta:</h2>
+                        <p>Você pode salvar uma vida.</p>
+                        <hr>
+
+
+                        {%  include 'partials/usuarios/partial_cadastro.html' %}
+
+                    </div>
+
+                </div>
+
+                <div class="col-md bg-img">
+
+
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+{% endblock %}

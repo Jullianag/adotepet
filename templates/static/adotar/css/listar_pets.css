@@ -1,0 +1,102 @@
+.btn-custom-secondary{
+    background-color: #254544;
+    border: none;
+    box-shadow: 2px 2px 5px 1px rgb(108, 108, 108);
+    color: white;
+    font-size: 20px;
+    padding: 5px 20px 5px 20px;
+    border-radius: 10px;
+
+}
+
+.btn-custom-secondary:hover {
+    border-right: none;
+    border-left: none;
+    color: white;
+
+}
+
+.span-bold{
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.span-bold2{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.badge-lg{
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.bg-side-plataforma{
+    background-color: #391D34;
+    color: white;
+
+
+}
+
+#box {
+    width: 90%;
+    background-color: rgb(235, 221, 204);
+    margin: auto;
+    padding: 50px;
+    margin-top: 1%;
+    border-radius: 20px;
+    box-shadow: 1px 1px 5px 1px #242424;
+
+}
+
+a.filtro {
+    text-decoration: none;
+    margin-left: 90%;
+    color: #223f3e;
+
+}
+
+a.filtro:hover {
+    text-decoration: underline;
+    margin-left: 90%;
+    color: #223f3e;
+    border-right: none;
+    border-left: none;
+
+}
+
+a.btn-custom-secondary {
+    text-decoration: none;
+}
+
+a.imagem:hover {
+    border-right: none;
+    border-left: none;
+
+}
+
+#fundo {
+    background-color: rgb(235, 221, 204);
+}
+
+.col-md-4 input {
+    box-shadow: 1px 1px 5px 1px #242424;
+}
+
+.col-md-3 select{
+    box-shadow: 1px 1px 5px 1px #242424;
+}
+
+.col-md-3 input{
+    box-shadow: 1px 1px 5px 1px #242424;
+}
+
+#success{
+    border-right: none;
+    border-left: none;
+ }
+
+#danger {
+    border-right: none;
+    border-left: none;
+ }

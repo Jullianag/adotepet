@@ -1,0 +1,88 @@
+{% extends 'bases/base_divulgar.html' %}
+
+{% load static %}
+
+{% block title %}Ver pet{% endblock %}
+
+{% block head %}
+
+
+{% endblock %}
+
+{% block body %}
+
+        <div id="fundo" class="container-fluid">
+            <div class="row">
+                {% include 'partials/divulgar/partial_sidebar.html' %}
+
+                <div style="padding:40px" class="col-md">
+                    <h3 style="font-size: 55px;" class="font-vinho">Informações do pet:</h3>
+                <br>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img width="100%" src="{{pet.foto.url}}">
+                        </div>
+                        <div class="col-md-9">
+                            <span class="span-bold">Nome:</span>
+                            <p>{{pet.nome}}</p>
+                            <hr>
+                            <div style="width:40%">
+                            <i style="font-size: 30px" class="fa-solid fa-tags"></i>
+                            <br>
+                            <br>
+                                {% for tag in pet.tags.all %}
+                                    <span style="padding: 6px; font-size: 20px;" class="badge bg-dark">{{tag}}</span>
+                                {% endfor %}
+
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <span style="font-size: 22px" class="span-bold">Descrição</span>
+                            <p>{{pet.descricao}}</p>
+                            <span style="font-size: 22px" class="span-bold">Raça</span>
+                            <p>{{ pet.raca }}</p>
+
+                        </div>
+
+
+                    </div>
+                    <hr>
+
+                    <div class="row">
+                        <h3 style="font-size: 40px;" class="font-vinho">Informações residenciais:</h3>
+                        <div class="col-md">
+                            <div class="row">
+                                <div class="col-md">
+                                    <span class="span-bold">Estado</span>
+                                    <p>{{pet.estado}}</p>
+                                </div>
+
+                                <div class="col-md">
+                                    <span class="span-bold">Cidade</span>
+                                    <p>{{pet.cidade}}</p>
+                                </div>
+                            </div>
+                            <span class="span-bold">Telefone para contato</span>
+                            <p>{{pet.telefone}}</p>
+                            <br>
+                            <a href="{% url 'pedido_adocao' pet.id %}" class="btn-custom-secondary">SOLICITAR ADOÇÃO</a>
+
+                        </div>
+
+                        <div class="col-md">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+
+
+{% endblock %}

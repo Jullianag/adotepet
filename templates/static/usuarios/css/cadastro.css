@@ -1,0 +1,67 @@
+.bg-side{
+    background-color: #386966;
+    color: white;
+    height: 100vh;
+
+
+}
+.header{
+    border-bottom: 1px solid white;
+    padding: 20px;
+}
+
+.body-form{
+    padding: 20px;
+}
+
+.font-logo{
+    margin-left: 10px;
+    font-size: 40px;
+
+}
+
+.btn-custom-primary{
+    background-color: #223f3e;
+    border: none;
+    box-shadow: 2px 2px 5px 1px black;
+    color: white;
+    font-size: 20px;
+    padding: 5px 20px 5px 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+
+}
+
+.link-float{
+
+    text-decoration: none;
+    float: right;
+    margin: 20px;
+}
+
+.side-logo{
+    text-align: center;
+    margin-top: 60px;
+}
+
+.bg-img{
+     background-image: url('/static/usuarios/img/verde.png');
+}
+
+.form-control{
+    box-shadow: 2px 2px 5px 1px black;
+}
+
+.form-select {
+    box-shadow: 2px 2px 5px 1px black;
+}
+
+a.link-float:hover{
+    text-decoration: underline;
+    color: #ffffff;
+}
+
+a.link-float{
+    text-decoration: none;
+    color: #ffffff;
+}

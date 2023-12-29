@@ -1,0 +1,80 @@
+{% extends 'bases/base_divulgar.html' %}
+
+{% load static %}
+
+{% block title %}Pets{% endblock %}
+
+{% block head %}
+
+
+
+{% endblock %}
+
+    {% block body %}
+
+        <div class="container-fluid">
+            <div class="row">
+
+            {% include 'partials/divulgar/partial_sidebar.html' %}
+
+                <div class="col-md">
+                    <div class="box-form">
+                        <div class="box width80">
+                            {% include 'partials/messages/messages.html' %}
+                            <h3 class="font-vinho">Quero divulgar</h3>
+                            <hr>
+
+                             <table class="tabela" cellpadding="20">
+                                <tr>
+                                    <th>Foto</th>
+                                    <th>Nome</th>
+                                    <th>Raça</th>
+                                    <th>Status</th>
+                                    <th>Remover</th>
+                                </tr>
+
+                                 {% for pet in pets %}
+                                    <tr class="tabela-linha">
+                                        <td width="20%">
+                                            <img width="90%" src="{{ pet.foto.url }}">
+                                        </td>
+                                        <td>
+                                            {{ pet.nome }}
+                                        </td>
+                                        <td>
+                                            {{ pet.raca }}
+
+                                        </td>
+                                        <td>
+                                            {% if pet.status == 'P' %}
+
+                                                <span class="badge text-bg-primary">Para adoção</span>
+                                            {% elif pet.status == 'A' %}
+                                                <span class="badge text-bg-success">Adotado</span>
+                                            {% endif %}
+
+
+                                        </td>
+                                        <td>
+                                            <a style="border-left: none; border-right: none" href="{% url 'remover_pet' pet.id %}" class="btn btn-danger">REMOVER</a>
+                                        </td>
+                                    </tr>
+                                 {% endfor %}
+
+
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+    {% endblock %}

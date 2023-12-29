@@ -1,0 +1,39 @@
+{% load static %}
+
+<div class="col-md-2 bg-side sidebar">
+
+    <header>{% include 'partials/usuarios/partial_nome.html' %}</header>
+    <span style="font-size: 15px">Área de: {{ user.username }}</span>
+    <br>
+    <br>
+
+        <a class="barra" href="{% url 'cadastro' %}">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+        </a>
+        <a href="{% url 'novo_pet' %}">
+            <i class="fa-solid fa-address-card"></i>
+            <span>Novo Pet</span>
+        </a>
+        <a href="{% url 'seus_pets' %}">
+            <i class="fa-solid fa-folder-open"></i>
+            <span>Seus pets</span>
+        </a>
+        <a href="{% url 'listar_pets' %}">
+            <i class="fa-solid fa-paw"></i>
+            <span>Adotar</span>
+        </a>
+        <a href="{% url 'ver_pedido_adocao' %}">
+            <i class="fa-solid fa-dog"></i>
+            <span>Ver pedidos</span>
+        </a>
+        <a href="{% url 'dashboard' %}">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Gráficos</span>
+        </a>
+        <a href="{% url 'logout' %}">
+            <i class="fa-solid fa-circle-xmark"></i>
+            <span>Sair</span>
+        </a>
+
+</div>

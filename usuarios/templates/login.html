@@ -1,0 +1,41 @@
+{% extends 'bases/base.html' %}
+
+{% load static %}
+
+{% block title %}Login{% endblock %}
+
+{% block head %}
+
+
+{% endblock %}
+
+{% block body %}
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 bg-side">
+                    <div class='header'>
+                        {% include 'partials/usuarios/partial_nome.html' %}
+                    </div>
+                    <br>
+                    <div class="body-form">
+                        {% include 'partials/messages/messages.html' %}
+
+                            <h2>Logar</h2>
+                            <p>Entre no sistema.</p>
+                            <hr>
+
+                            {% include 'partials/usuarios/partial_login.html' %}
+                            </div>
+                    </div>
+
+                <div class="col-md bg-img">
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+{% endblock %}

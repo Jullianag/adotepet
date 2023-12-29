@@ -1,0 +1,64 @@
+{% extends 'bases/base_divulgar.html' %}
+
+{% load static %}
+
+{% block title %}Adotar{% endblock %}
+
+{% block head %}
+
+
+{% endblock %}
+
+{% block body %}
+
+        <div class="container-fluid">
+            <div class="row">
+                {% include 'partials/divulgar/partial_sidebar.html' %}
+
+                <div style="padding:60px" class="col-md">
+                    <div class="row">
+                        {% include 'partials/messages/messages.html' %}
+
+                        {% for pedido in pedidos %}
+                            <div class="col-md-3" style="margin-top: 20px;">
+                                <div class="card" style="background-color: rgb(235, 221, 204); border:none;">
+                                    <div style="padding:10px">
+                                        <span style="font-size: 20px" class="span-bold">{{pedido.pet.nome}}</span>
+                                        <br>
+                                        <span style="font-size: 15px">{{ pedido.pet.raca }}</span>
+                                    </div>
+                                    <img class="card-img-top" src="{{pedido.pet.foto.url}}">
+                                    <div class="card-body">
+                                        <span style="font-size: 20px;">Quem solicitou: </span>
+                                        <h1 class="card-title">{{pedido.usuario.username}}</h1>
+                                        <span class="span-bold2">Telefone:</span>
+                                        <p>{{pedido.pet.telefone}}</p>
+
+                                        <span class="span-bold2">Email:</span>
+                                        <p>{{user.email}}</p>
+
+                                        <span class="span-bold2">Cidade:</span>
+                                        <p>{{pedido.pet.cidade}}</p>
+                                        <a id="success" href="{% url 'processa_pedido_adocao' pedido.id %}?status=A" class="btn btn-success btn-lg">Aprovar</a>
+                                        <a id="danger" href="{% url 'processa_pedido_adocao' pedido.id %}?status=R" class="btn btn-danger btn-lg">Recusar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+
+
+
+
+
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+
+
+{% endblock %}

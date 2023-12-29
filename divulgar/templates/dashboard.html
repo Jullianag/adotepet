@@ -1,0 +1,69 @@
+{% extends 'bases/base_divulgar.html' %}
+
+{% load static %}
+
+{% block title %}Gráfico{% endblock %}
+
+{% block head %}
+
+
+
+{% endblock %}
+
+{% block body %}
+
+        <div class="container-fluid">
+            <div class="row">
+                {% include 'partials/divulgar/partial_sidebar.html' %}
+
+                <div style="padding:60px" class="col-md">
+
+                    <h3 class="font-vinho">Quantidade de adoções por raça.</h3>
+                     <div style="width: 60%;">
+                        <canvas id="myChart"></canvas>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+
+        fetch("/divulgar/api_adocoes_por_raca/",{
+            method: 'GET',
+        }).then(function(result){
+            return result.json()
+        }).then(function(data_adocoes){
+
+            const data = {
+                labels: data_adocoes['labels'],
+                datasets: [{
+                label: 'Adoções solicitadas',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: data_adocoes['qtd_adocoes'],
+                }]
+            };
+
+            const config = {
+                type: 'line',
+                data: data,
+                options: {}
+            };
+
+            const myChart = new Chart(
+                document.getElementById('myChart'),
+                config
+            );
+
+
+        })
+
+
+
+    </script>
+
+
+
+{% endblock %}

@@ -1,0 +1,106 @@
+{% extends 'bases/base_divulgar.html' %}
+
+{% load static %}
+
+{% block title %}Adotar{% endblock %}
+
+{% block head %}
+
+
+{% endblock %}
+
+
+{% block body %}
+
+        <div class="container-fluid">
+            <div class="row">
+                {% include 'partials/divulgar/partial_sidebar.html' %}
+
+                <div class="col-md">
+                    <div class="wrapper">
+                        <div id="box" class="card">
+                            {% include 'partials/messages/messages.html' %}
+                            <span><h3 class="font-vinho">Escolha seu peludo</h3></span>
+                            <h6><a class="filtro" href="{% url 'listar_pets' %}">Limpar filtro</a></h6>
+                            <hr>
+                            <form action="{% url 'listar_pets' %}" method="GET">
+                                <div class="row">
+
+                                    <div class="col-md-4">
+                                      <input onfocus="this.value='';" type="text" placeholder="Nome..." value="{% if nome %} {{ pet.nome }} {% endif %}" name="nome" class="form-control">
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <input onfocus="this.value='';" type="text" placeholder="Cidade..." value="{% if cidade %} {{ ciadade }} {% endif %}" name="cidade" class="form-control">
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <select class="form-select" name="raca">
+                                        <option disabled selected>Raça</option>
+                                            {% for raca in racas %}
+                                                <option {% if raca_filter.id == raca.id %} selected {% endif %} value="{{ raca.id }}">{{ raca }}</option>
+                                            {%  endfor %}
+
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <input  type="submit" class="btn-custom-secondary" value="FILTRAR">
+                                    </div>
+                                </div>
+                            </form>
+
+                             <table class="tabela" cellpadding="20">
+                                <tr>
+                                    <th>Foto</th>
+                                    <th>Nome</th>
+                                    <th>Raça</th>
+                                    <th>Status</th>
+                                    <th>Cidade</th>
+                                </tr>
+
+                                {% for pet in pets%}
+                                    <tr class="tabela-linha">
+                                        <td width="20%">
+                                            <a class="imagem" href="{%  url 'ver_pet' pet.id %}"><img width="40%" src="{{pet.foto.url}}"></a>
+                                        </td>
+                                        <td>
+                                            {{pet.nome}}
+
+
+                                        </td>
+                                        <td>
+                                            {{pet.raca}}
+
+                                        </td>
+                                        <td>
+                                            {% if pet.status == "P" %}
+                                                <span class="badge text-bg-primary">Para adoção</span>
+                                            {% elif pet.status == "A" %}
+                                                <span class="badge text-bg-success">Adotado</span>
+                                            {% endif%}
+
+
+
+                                        </td>
+                                        <td>
+                                            {{pet.cidade}}
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+{% endblock %}
+
+
+

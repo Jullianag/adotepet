@@ -1,0 +1,96 @@
+{% extends 'bases/base_divulgar.html' %}
+
+{% load static %}
+
+{% block title %}Novo Pet{% endblock %}
+
+{% block head %}
+
+
+
+{% endblock %}
+
+
+    {% block body %}
+
+        <div class="container-fluid">
+            <div class="row">
+                {% include 'partials/divulgar/partial_sidebar.html' %}
+
+                <div class="col-md">
+                    <div class="box-form">
+                        <div class="box">
+                            <div class="header-box">
+                                <h3 class="font-vinho">Quero divulgar</h3>
+                                <hr>
+                            </div>
+                            <div class="body-box">
+                                <form action="{% url 'novo_pet' %}" method="POST" enctype='multipart/form-data'>{% csrf_token %}
+                                    {% include 'partials/messages/messages.html' %}
+                                    <input type="file" name="foto" class="form-control" required>
+                                    <br>
+                                    <span>Nome do pet:</span>
+                                    <input type="text" class="form-control" name="nome" placeholder="Digite o nome do pet...">
+                                    <br>
+                                    <span>Descrição:</span>
+                                    <textarea class="form-control" name="descricao" placeholder="Descrição..."></textarea>
+                                    <br>
+                                    <label>Cep:</label>
+                                    <input id="txtCep" type="text" class="form-control" name="cep" placeholder="Ex: 01001000">
+                                    <br>
+                                        <label>Estado:</label>
+                                        <input id="txtEstado" class="form-control" type="text"  name="estado">
+                                    <br>
+                                    <label>Cidade:</label>
+                                        <input id="txtCidade" class="form-control" type="text"  name="localidade">
+                                    <br>
+                                    <label>Bairro:</label>
+                                        <input id="txtBairro" class="form-control" type="text"  name="bairro">
+                                    <br>
+                                     <label>Rua:</label>
+                                        <input id="txtRua" class="form-control" type="text"  name="logradouro">
+                                    <br>
+                                    <label>Complemento:</label>
+                                        <input class="form-control" type="text"  name="complemento">
+                                    <br>
+
+
+                                    <span>Telefone para contato:</span>
+                                    <input type="text" placeholder="Digite o seu telefone..." name="telefone" class="form-control">
+                                    <br>
+                                    <span>Tags:</span>
+
+                                    <select name="tags" multiple class="form-select">
+                                        {% for tag in tags %}
+                                            <option value="{{ tag.id }}">{{ tag }}</option>
+                                        {% endfor %}
+
+                                    </select>
+                                    <br>
+                                    <span>Raça:</span>
+
+                                    <select name="raca" class="form-select">
+                                    <option disabled selected>Escolha a raça</option>
+                                        {% for raca in racas %}
+                                            <option value="{{ raca.id }}">{{ raca }}</option>
+                                        {% endfor %}
+
+                                    </select>
+
+                                    <input type="submit"  value="ENVIAR" class="btn-custom-primary">
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    {% endblock %}
+
+

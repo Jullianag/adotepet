@@ -1,0 +1,28 @@
+{% load static %}
+
+            <form action="{% url 'login' %}" method="POST">
+                {% csrf_token %}
+                            <span>E-mail:</span>
+                            <input type="email" class="form-control" placeholder="Digite seu e-mail..." name="email">
+                            <br>
+
+                            <span>Senha:</span>
+                            <input type="password" class="form-control" placeholder="Digite sua senha..." name="senha">
+
+
+                            <input type="submit" value="ENTRAR" class="btn-custom-primary">
+
+                            <a href="{% url 'cadastro' %}" class="link-float">Não tem cadastro?</a>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-md bg-img">
+                    {% include 'partials/usuarios/partial_logo.html' %}
+                </div>
+
+            </div>
+
+
+
+        </div>
