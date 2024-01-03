@@ -84,9 +84,9 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'NAME',
-        'USER': 'USER',
-        'PASSWORD': 'PASSWORD',
+        'NAME': 'pet_db',
+        'USER': 'root',
+        'PASSWORD': '',
         'HOST': 'localhost',  # or the hostname where your MySQL server is running
         'PORT': '3306',      # or the port on which your MySQL server is listening
     }
