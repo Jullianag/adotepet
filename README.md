@@ -1,5 +1,5 @@
 # Adote um pet! 
-[![NPM](https://img.shields.io/npm/l/react)](https://github.com/Jullianag/adotepet/blob/main/LICENSE) 
+[![Linkedin Badge](https://img.shields.io/badge/LinkedIn-blue?style=flat&logo=linkedin&labelColor=blue&link=https://www.linkedin.com/in/julliana-gnecco/)](https://www.linkedin.com/in/julliana-gnecco/) [![NPM](https://img.shields.io/npm/l/react)](https://github.com/Jullianag/adotepet/blob/main/LICENSE) 
 
 # Sobre o projeto
 
