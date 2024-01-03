@@ -28,9 +28,7 @@ aprovação de adoções.
 - Django
 
 ## Implantação em produção
-- Back end: KingHost
-- Banco de dados: Postgresql
-
+Futuramente
 
 
 # Autor
